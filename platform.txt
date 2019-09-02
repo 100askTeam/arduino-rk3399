@@ -65,7 +65,7 @@ recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} "{archi
 
 
 ## Combine gc-sections, archives, and objects
-recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" -o "{build.path}/am335x_app" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} -Wl,--start-group {object_files} {compiler.c.elf.libs} -Wl,--end-group "-L{build.path}"
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" -o "{build.path}/rk3399_app" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} -Wl,--start-group {object_files} {compiler.c.elf.libs} -Wl,--end-group "-L{build.path}"
 
 
 ## Create hex
@@ -80,7 +80,7 @@ recipe.output.tmp_file={build.project_name}.hex
 #recipe.output.save_file={build.project_name}.{build.variant}.bin
 
 ## Compute size
-recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/am335x_app"
+recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/rk3399_app"
 recipe.size.regex=^(?:\.text|\.bss|\.rodata|)\s+([0-9]+).*
 recipe.size.regex.data=^(?:\.data|\.rodata|\.bss)\s+([0-9]+).*
 #recipe.size.regex.eeprom=^(?:\.eeprom)\s+([0-9]+).*
